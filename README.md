@@ -1,4 +1,4 @@
-# Adversarial Input Red-Teaming Toolkit
+<img width="2445" height="1003" alt="image" src="https://github.com/user-attachments/assets/18de2156-eb8b-483d-9ab8-367eda19d125" /># Adversarial Input Red-Teaming Toolkit
 
 A toolkit that fires adversarial, malformed, and boundary-case inputs at a deployed
 AI inference endpoint, then compiles the results into a live dashboard with a
@@ -191,6 +191,16 @@ Robustness Score = max(0.0, round(10.0 × (1.0 - Penalty Rate), 1))
 ---
 
 ## Sample output
+
+<img width="2496" height="1350" alt="image" src="https://github.com/user-attachments/assets/5f03b26f-c035-4846-8542-5f72927c7385" />
+<img width="2445" height="1003" alt="image" src="https://github.com/user-attachments/assets/652a17af-7327-4789-8a01-d3da3e76b978" />
+<img width="2466" height="1317" alt="image" src="https://github.com/user-attachments/assets/a6c37f32-e079-4b57-993c-5a3be1576214" />
+<img width="2407" height="1337" alt="image" src="https://github.com/user-attachments/assets/144b3edb-cdc0-4b75-8466-58a95e227c3d" />
+<img width="2434" height="1070" alt="image" src="https://github.com/user-attachments/assets/f9ba4641-c5a0-4ad5-bca3-c9d2baeeea86" />
+
+
+
+
 
 
 
