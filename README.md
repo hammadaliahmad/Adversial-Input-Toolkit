@@ -84,7 +84,7 @@ Two processes need to run at the same time: the target endpoint, and the toolkit
 **Terminal 1 — start the target endpoint:**
 
 ```bash
-uvicorn app:app --port 8000
+python app.py
 ```
 
 > First run only: this downloads the DistilBERT sentiment model (a few hundred
@@ -192,10 +192,7 @@ Robustness Score = max(0.0, round(10.0 × (1.0 - Penalty Rate), 1))
 
 ## Sample output
 
-*(Insert 2–3 screenshots here before submitting: the Live Fault Stream showing at
-least one Crash and one Flip, and the Analytics tab's severity-ranked table. This
-is the fastest way for a reviewer to see the tool working without running it
-themselves.)*
+
 
 ---
 
