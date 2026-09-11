@@ -194,7 +194,13 @@ Robustness Score = max(0.0, round(10.0 × (1.0 - Penalty Rate), 1))
 
 ### Video Walkthrough
 
-[![Adversial Toolkit](https://img.youtube.com/vi/cjju2sk_p9M/hqdefault.jpg)](https://www.youtube.com/watch?v=cjju2sk_p9M)
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=cjju2sk_p9M">
+    <img src="https://img.youtube.com/vi/cjju2sk_p9M/hqdefault.jpg" alt="Adversial Toolkit" width="600" style="border-radius: 8px;">
+  </a>
+  <br>
+  <em>Click image to watch the Walkthrough on YouTube</em>
+</p>
 
 ### Screenshots
 <img width="2496" height="1350" alt="image" src="https://github.com/user-attachments/assets/5f03b26f-c035-4846-8542-5f72927c7385" />
