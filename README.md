@@ -1,4 +1,4 @@
-<img width="2445" height="1003" alt="image" src="https://github.com/user-attachments/assets/18de2156-eb8b-483d-9ab8-367eda19d125" /># Adversarial Input Red-Teaming Toolkit
+# Adversarial Input Red-Teaming Toolkit
 
 A toolkit that fires adversarial, malformed, and boundary-case inputs at a deployed
 AI inference endpoint, then compiles the results into a live dashboard with a
