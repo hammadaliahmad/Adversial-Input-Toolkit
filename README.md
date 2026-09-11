@@ -4,7 +4,6 @@ A toolkit that fires adversarial, malformed, and boundary-case inputs at a deplo
 AI inference endpoint, then compiles the results into a live dashboard with a
 robustness score, severity-ranked findings, and concrete remediation suggestions.
 
-Built for the "Adversarial Input Red-Teaming Toolkit" hackathon track.
 
 > **Note for reviewers:** this project is being submitted for asynchronous review
 > (no live walkthrough). This README is written to get the full stack running
