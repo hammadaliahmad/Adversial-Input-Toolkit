@@ -234,6 +234,9 @@ Robustness Score = max(0.0, round(10.0 × (1.0 - Penalty Rate), 1))
   generator asks for strict JSON and strips markdown fences, but a malformed case
   from the model is skipped (logged as `Malformed_Case_Missing_<field>`) rather
   than crashing the run.
+- AI generation for custom payloads depends on strength of model and has not
+  been completely verified for its accuracy and is proof of concept at current
+  state.
 
 ---
 
