@@ -61,6 +61,7 @@ robustness score, severity-ranked findings, and concrete remediation suggestions
 ```bash
 # 1. Clone the repo
 git clone hammadaliahmad/Adversial-Input-Toolkit
+cd 'Adversial-Input-Toolkit'
 
 # 2. Install dependencies
 pip install -r requirements.txt
@@ -96,7 +97,7 @@ Wait for `Uvicorn running on http://127.0.0.1:8000` before continuing.
 **Terminal 2 — start the toolkit:**
 
 ```bash
-streamlit run toolkit.py
+python -m streamlit run toolkit.py
 ```
 
 This opens the dashboard in your browser (default `http://localhost:8501`).
