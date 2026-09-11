@@ -37,6 +37,8 @@ robustness score, severity-ranked findings, and concrete remediation suggestions
 
 ```
 .
+├──.streamlit
+|     └── config.toml        # Contains theming settings for colors and font
 ├── toolkit.py               # Streamlit dashboard + audit runner (the toolkit itself)
 ├── app.py                   # Example FastAPI model under test (the target endpoint)
 ├── payload.json             # Active payload suite (generated or uploaded)
