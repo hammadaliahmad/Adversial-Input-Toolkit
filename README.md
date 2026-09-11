@@ -60,7 +60,7 @@ robustness score, severity-ranked findings, and concrete remediation suggestions
 
 ```bash
 # 1. Clone the repo
-git clone hammadaliahmad/Adversial-Input-Toolkit
+git clone https://github.com/hammadaliahmad/Adversial-Input-Toolkit.git
 cd 'Adversial-Input-Toolkit'
 
 # 2. Install dependencies
