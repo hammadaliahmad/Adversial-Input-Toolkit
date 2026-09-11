@@ -192,9 +192,11 @@ Robustness Score = max(0.0, round(10.0 × (1.0 - Penalty Rate), 1))
 
 ## Sample output
 
+### Video Walkthrough
 
+[![Adversial Toolkit](https://img.youtube.com/vi/cjju2sk_p9M/hqdefault.jpg)](https://www.youtube.com/watch?v=cjju2sk_p9M)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/cjju2sk_p9M" frameborder="0" allowfullscreen></iframe>
+### Screenshots
 <img width="2496" height="1350" alt="image" src="https://github.com/user-attachments/assets/5f03b26f-c035-4846-8542-5f72927c7385" />
 <img width="2445" height="1003" alt="image" src="https://github.com/user-attachments/assets/652a17af-7327-4789-8a01-d3da3e76b978" />
 <img width="2466" height="1317" alt="image" src="https://github.com/user-attachments/assets/a6c37f32-e079-4b57-993c-5a3be1576214" />
