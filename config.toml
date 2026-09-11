@@ -1,0 +1,14 @@
+[theme]
+
+backgroundColor = "#222831"
+
+secondaryBackgroundColor = "#393E46"
+
+textColor = "#DFD0B8"
+
+primaryColor ="#948979"
+
+font = " Spline Sans Mono:https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&display=swap"
+
+
+dataframeHeaderBackgroundColor ="#393E46"
