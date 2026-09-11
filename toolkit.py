@@ -33,6 +33,23 @@ def detect_leak(text):
     snippet = text[:5000]
     return any(ind in snippet for ind in LEAK_INDICATORS)
 
+
+def check_endpoint_reachable(target_url, connect_timeout=5, read_timeout=10):
+    try:
+        requests.post(target_url, json={"text": ""}, timeout=(connect_timeout, read_timeout))
+        return True, None
+    except requests.exceptions.ConnectionError:
+        return False, "Connection refused / host not reachable. Is the target endpoint running and is the URL correct?"
+    except requests.exceptions.Timeout:
+        return False, "Connection attempt timed out. The host may be reachable but not responding."
+    except requests.exceptions.MissingSchema:
+        return False, "URL is missing a scheme (e.g. use 'http://127.0.0.1:8000/predict')."
+    except requests.exceptions.InvalidURL:
+        return False, "URL is malformed."
+    except requests.exceptions.RequestException as e:
+        return False, f"Request failed before a response was received: {e}"
+
+    
 def prompt_testing(target_url):
     global payload_count
     logging.basicConfig(filename="fault_log.jsonl", filemode="w",level=logging.ERROR, format="%(message)s",force=True)
@@ -40,10 +57,15 @@ def prompt_testing(target_url):
     if not os.path.exists("payload.json"):
         st.error("No payload.json found. Upload a payload file or generate one in the Payload tab first.")
         return []
-
+    
+    reachable, reason = check_endpoint_reachable(target_url)
+    if not reachable:
+        st.error(f" Target endpoint unreachable at `{target_url}` — audit not run.\n\n**Reason:** {reason}")
+        return []
+    
     with open("payload.json","r", encoding="utf-8") as file:
         payloads = json.load(file)
-
+    
 
     #target_url = "http://127.0.0.1:8000/predict"
     payload_count = len(payloads)
@@ -105,6 +127,14 @@ def prompt_testing(target_url):
         except requests.exceptions.Timeout:
             latency_ms = round((time.time() - start_time) * 1000, 2)
             error_entry = {"id": payload_id, "type": payload_type, "payload": str(case["text"])[:30] + "...", "status_code": "None", "confidence": "None", "latency": latency_ms, "result": "Timeout", "leak": False}
+            logging.error(json.dumps(error_entry))
+
+        except requests.exceptions.ConnectionError:
+            # Endpoint was reachable at pre-flight but has since gone down entirely -
+            # this specific payload likely killed the process, which is more severe
+            # than a normal 500 (the process didn't survive to respond at all).
+            latency_ms = round((time.time() - start_time) * 1000, 2)
+            error_entry = {"id": payload_id, "type": payload_type, "payload": str(case["text"])[:30] + "...", "status_code": "None", "confidence": "None", "latency": latency_ms, "result": "Server_Down", "leak": False}
             logging.error(json.dumps(error_entry))
 
         except Exception as e:
